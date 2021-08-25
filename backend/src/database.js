@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // usando process accedemos a las variables
-const uri = process.MONGODB_URI;
+const uri = process.env.MONGODB_URI ? process.env.MONGODB_URI : '';
 
 mongoose.connect(uri, {
     useNewUrlParser: true,

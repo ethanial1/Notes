@@ -5,8 +5,8 @@ require('./database');
 
 // iniciamos el servidor
 async function main() {
-    await app.listen(4000);
-    console.log("Servidor activo");
+    await app.listen(app.get('port'));
+    console.log("Servidor activo en el puerto: ", app.get('port'));
 }
 
 main();
