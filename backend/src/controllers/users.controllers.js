@@ -5,7 +5,7 @@ const userCtrl = {}
 
 userCtrl.getUsers = async (req, res) => {
     const lista = await User.find();
-    res.json({lista});
+    res.json(lista);
 }
 
 userCtrl.createUser = async (req, res) => {
