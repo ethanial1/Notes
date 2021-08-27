@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import { format } from 'timeago.js';
+import { Link } from 'react-router-dom';
 
 export default class NotesList extends Component {
     state = {
@@ -36,7 +37,8 @@ export default class NotesList extends Component {
                                 <div className="card-footer">
                                     <div className="d-grid gap-2 d-md-flex justify-content-md-end">
                                         <button className="btn btn-outline-danger me-md-2 btn-sm" type="button" onClick={() => this.deleteNote(nota._id)}><i class="icon ion-md-trash"></i></button>
-                                        <button className="btn btn-outline-warning btn-sm" type="button"><i class="icon ion-md-create"></i></button>
+                                        <Link className="btn btn-outline-warning btn-sm" to={"/edit/"+nota._id}><i class="icon ion-md-create"></i></Link>
+
                                     </div>
                                 </div>
                             </div>
