@@ -6,7 +6,7 @@ const noteCtrl = {};
 // regresa muchas notas
 noteCtrl.getNotes = async (req, res) => {
     const notes = await NoteModel.find(); // [{},{},{}]
-    res.json({msg: notes});
+    res.json(notes);
 }
 
 // regresa una nota

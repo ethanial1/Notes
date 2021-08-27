@@ -14,6 +14,7 @@ export default class CreateNoteForme extends Component {
 
     async componentDidMount() {
         const res = await axios.get('http://localhost:4000/api/users');
+        console.log(res);
         this.setState({users: res.data.map(user => user.username), userSelected: res.data[0].username});
     }
 
@@ -48,19 +49,19 @@ export default class CreateNoteForme extends Component {
                 <div className="card card-body">
                     <h5>Crear nueva nota</h5>
                     {/** SELECT USER  */}
-                    <div className="form-group">
+                    <div className="form-group mb-3">
                         <select className="form-control" name="userSelected" onChange={this.onInputChange}>
-                            {this.state.users.map(urs => 
-                                <option key={urs.username} value={urs.username}>
-                                    {urs.username}
+                            {this.state.users.map(usr => 
+                                <option key={usr} value={usr}>
+                                    {usr}
                                 </option>
                             )}
                         </select>
                     </div>
-                    <div className="form-group">
-                        <input type="text" className="form-group" placeholder="Titulo" name="titulo" onChange={this.onInputChange} required/>
+                    <div className="form-group mb-3">
+                        <input type="text" className="form-control" placeholder="Titulo" name="titulo" onChange={this.onInputChange} required/>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group mb-3">
                         <textarea name="descrip" className="form-control" placeholder="Descripción" onChange={this.onInputChange} required></textarea>
                     </div>
                     <div className="form-group">
